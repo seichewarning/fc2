@@ -9,7 +9,7 @@ def list_files
   cmd = "ssh #{MODEL_MACHINE} 'ls -tr1'"
   stdout, stderr, status = Open3.capture3(cmd)
   LOG_FILE << stdout
-  LOF_FILE << "\n------------------------------------\n"
+  LOG_FILE << "\n------------------------------------\n"
 end
 
 list_files
