@@ -1,0 +1,43 @@
+FC2-MICRO:
+This is the name for the EC2 mirco instance running the file
+copying script.  FC2 stands for Forecast Command and Control.
+
+
+MODEL-M5:
+This is the name for the large instance running the models.
+
+
+Instructions for setting up the FC2-MICRO instance:
+  - ssh into the instance as user 'ubuntu'.  If its' set up
+    as a different user simply replace 'ubuntu' with that
+    user everywhere below.
+
+  - run these commands
+     sudo apt-get update && sudo apt-get upgrade
+     sudo apt-get install ruby
+     git clone https://github.com/seichewarning/fc2.git ~/code/fc2
+     ssh-keygen -t rsa -N "" -f ~/.ssh/fc2
+     chmod 600 ~/.ssh/fc2
+     touch ~/.ssh/config
+     chmod 600 ~/.ssh/config
+     echo 'IdentityFile ~/.ssh/fc2' > ~/.ssh/config
+     cat ~/.ssh/fc2.pub
+
+  - copy the output from the public key above.
+
+  - ssh into the MODEL-M5 instance as user ubuntu and run
+     cat > ~/.ssh/authorized_keys
+
+  - the above command expects input, paste the public key
+    into here.  Hit ctrl+D when done to close and save the file.
+
+  - ssh back into the FC2-MICRO instance.
+
+  - verify you can ssh into the MODEL-M5 instance from the FC2-MICRO
+    instance by running this.  Use the prive IP address
+      ssh ubuntu@MODEL-M5.private-ip-address
+
+  - 
+
+
+     
