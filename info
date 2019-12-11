@@ -1,6 +1,9 @@
 FC2-MICRO:
 This is the name for the EC2 mirco instance running the file
 copying script.  FC2 stands for Forecast Command and Control.
+When creating an image for this machine, it's best to create a 
+medium or large one, other wise it runs out of memory installing
+everything.
 
 
 MODEL-M5:
@@ -13,8 +16,17 @@ Instructions for setting up the FC2-MICRO instance:
     user everywhere below.
 
   - run these commands
-     sudo apt-get update && sudo apt-get upgrade
-     sudo apt-get install ruby
+     sudo apt-get -y update && sudo apt-get -y upgrade
+     sudo apt-get -y install ruby
+     sudo apt-get install -y awscli
+     sudo gem install aws-sdk-ec2 --verbose
+     sudo gem install aws-sdk-s3 --verbose
+
+  - configure AWS credentials, run 'aws configure' then get give
+    it the information it asks for.
+
+  - run these commands
+
      git clone https://github.com/seichewarning/fc2.git ~/code/fc2
      ssh-keygen -t rsa -N "" -f ~/.ssh/fc2
      chmod 600 ~/.ssh/fc2
