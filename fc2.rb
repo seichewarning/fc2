@@ -12,10 +12,10 @@ def list_files
 end
 
 def run_cmd(cmd)
-  log_text "Running command:\n\t\t#{cmd}\n"
+  log "Running command:\n\t\t#{cmd}\n"
   stdout, stderr, status = Open3.capture3(cmd)
-  log_text "STDOUT:\n#{stdout}\nSTDERR:\n#{stderr}\nSTATUS:\n#{status}\n"
-  log(log_text)
+  log "STDOUT:\n#{stdout}\nSTDERR:\n#{stderr}\nSTATUS:\n#{status}\n"
+  log log_text
 end
 
 def log(in_text)

@@ -41,12 +41,12 @@ Instructions for setting up the FC2-MICRO instance:
      cat > ~/.ssh/authorized_keys
 
   - the above command expects input, paste the public key
-    into here.  Hit ctrl+D when done to close and save the file.
+    into here.  Hit Enter, Hit ctrl+D when done to close and save the file.
 
   - ssh back into the FC2-MICRO instance.
 
   - verify you can ssh into the MODEL-M5 instance from the FC2-MICRO
-    instance by running this.  Use the prive IP address
+    instance by running this.  Use the prive IP address, hit yes if asked
       ssh ubuntu@MODEL-M5.private-ip-address
 
   - 
