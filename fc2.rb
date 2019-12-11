@@ -1,4 +1,5 @@
 require 'open3'
+require 'aws-sdk-s3'
 
 MODEL_MACHINE = 'ubuntu@172.31.7.60'
 BASE_FORECAST_OUTPUT_DIR = 'Build_WRF/WRF-4.1.2/test/em_real/'
@@ -23,6 +24,13 @@ def log(in_text)
 end
 
 list_files
+
+s3 = Aws::S3::Client.new
+resp = s3.list_buckets
+log "bucket names = #{resp.buckets.map(&:name)}"
+
+
+
 
 
 
