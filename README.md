@@ -27,6 +27,8 @@ Instructions for setting up the MODEL-M5 instance:
     it the information it asks for.
 
 
+----------------------------------------------------------------------
+
 
 Instructions for setting up the FC2-MICRO instance:
   - ssh into the instance as user 'ubuntu'.  If its' set up
@@ -34,17 +36,22 @@ Instructions for setting up the FC2-MICRO instance:
     user everywhere below.
 
   - run these commands
+     ```bash
      sudo apt-get -y update && sudo apt-get -y upgrade
      sudo apt-get -y install ruby
      sudo apt-get install -y awscli
      sudo gem install aws-sdk-ec2 --verbose
      sudo gem install aws-sdk-s3 --verbose
+     ```
 
-  - configure AWS credentials, run 'aws configure' then get give
-    it the information it asks for.
+  - configure AWS credentials, run
+      ```bash
+      aws configure
+     ```
+    then get give it the information it asks for.
 
   - run these commands
-
+     ```bash
      git clone https://github.com/seichewarning/fc2.git ~/code/fc2
      ssh-keygen -t rsa -N "" -f ~/.ssh/fc2
      chmod 600 ~/.ssh/fc2
@@ -52,11 +59,14 @@ Instructions for setting up the FC2-MICRO instance:
      chmod 600 ~/.ssh/config
      echo 'IdentityFile ~/.ssh/fc2' > ~/.ssh/config
      cat ~/.ssh/fc2.pub
+     ```
 
   - copy the output from the public key above.
 
   - ssh into the MODEL-M5 instance as user ubuntu and run
+     ```bash
      cat > ~/.ssh/authorized_keys
+     ```
 
   - the above command expects input, paste the public key
     into here.  Hit Enter, Hit ctrl+D when done to close and save the file.
@@ -65,17 +75,25 @@ Instructions for setting up the FC2-MICRO instance:
 
   - verify you can ssh into the MODEL-M5 instance from the FC2-MICRO
     instance by running this.  Use the prive IP address, hit yes if asked
+     ```bash
       ssh ubuntu@MODEL-M5.private-ip-address
+     ```
 
   - edit the crontab logged in as 'ubuntu' via the command
+      ```bash
       crontab -e
-
+     ```
+ 
   - add the following line
+      ```vim
       * * * * * /usr/bin/ruby /home/ubuntu/code/fc2/fc2.rb
+     ```
 
   - the copying script should be running now and the logging and
     status of the script can be monitored via the file found at
+       ```
        /home/ubuntu/code/fc2/out.log
+     ```
 
 
 
