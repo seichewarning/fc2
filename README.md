@@ -23,8 +23,12 @@ Instructions for setting up the MODEL-M5 instance:
      sudo apt-get install -y awscli
      ```
 
-  - configure AWS credentials, run 'aws configure' then get give
-    it the information it asks for.
+  - configure AWS credentials, run
+      ```bash
+      aws configure
+     ```
+    then get give it the information it asks for.
+
 
 
 ----------------------------------------------------------------------
