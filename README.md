@@ -13,11 +13,10 @@
 
 
 FC2-MICRO:
-This is the name for the EC2 mirco instance running the file
-copying script.
+This is the name for the EC2 mirco instance running this script.
 When creating an image for this machine, it's best to create a 
-medium or large one, other wise it might run out of memory installing
-everything.
+medium one, other wise it might run out of memory or you might
+run out of patience.
 
 
 MODEL-M5:
