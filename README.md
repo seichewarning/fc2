@@ -2,12 +2,12 @@
 
 ---------------------------------------------------------------
 
-### This script is mean to be run on a regular basis via a cron
-### job and copy over the output files from the WRF model
-### to an AWS S3 bucket.  It should
-### be run on a separate instance than the model machine.
-### Please see the heading of the fc2.rb file for constants that
-### need to be configured.
+**This script is mean to be run on a regular basis via a cron
+ job and copy over the output files from the WRF model
+ to an AWS S3 bucket.  It should
+ be run on a separate instance than the model machine.
+ Please see the heading of the fc2.rb file for constants that
+ need to be configured.**
 
 ---------------------------------------------------------------
 
