@@ -1,8 +1,22 @@
+# FC2 - Forecast Command and Control
+
+---------------------------------------------------------------
+
+## This script is mean to be run on a regular basis via a cron
+## job and copy over the output files from the WRF model
+## to an AWS S3 bucket.  It should
+## be run on a separate instance than the model machine.
+## Please see the heading of the fc2.rb file for constants that
+## need to be configured.
+
+---------------------------------------------------------------
+
+
 FC2-MICRO:
 This is the name for the EC2 mirco instance running the file
 copying script.
 When creating an image for this machine, it's best to create a 
-medium or large one, other wise it runs out of memory installing
+medium or large one, other wise it might run out of memory installing
 everything.
 
 
