@@ -1,6 +1,6 @@
 FC2-MICRO:
 This is the name for the EC2 mirco instance running the file
-copying script.  FC2 stands for Forecast Command and Control.
+copying script.
 When creating an image for this machine, it's best to create a 
 medium or large one, other wise it runs out of memory installing
 everything.
@@ -8,6 +8,22 @@ everything.
 
 MODEL-M5:
 This is the name for the large instance running the models.
+
+----------------------------------------------------------------------
+
+
+Instructions for setting up the MODEL-M5 instance:
+  - ssh into the instance as user 'ubuntu'.  If its' set up
+    as a different user simply replace 'ubuntu' with that
+    user everywhere below.
+
+  - run these commands
+     sudo apt-get -y update && sudo apt-get -y upgrade
+     sudo apt-get install -y awscli
+
+  - configure AWS credentials, run 'aws configure' then get give
+    it the information it asks for.
+
 
 
 Instructions for setting up the FC2-MICRO instance:
@@ -49,7 +65,17 @@ Instructions for setting up the FC2-MICRO instance:
     instance by running this.  Use the prive IP address, hit yes if asked
       ssh ubuntu@MODEL-M5.private-ip-address
 
-  - 
+  - edit the crontab logged in as 'ubuntu' via the command
+      crontab -e
+
+  - add the following line
+      * * * * * /usr/bin/ruby /home/ubuntu/code/fc2/fc2.rb
+
+  - the copying script should be running now and the logging and
+    status of the script can be monitored via the file found at
+       /home/ubuntu/code/fc2/out.log
+
+
 
 
      
