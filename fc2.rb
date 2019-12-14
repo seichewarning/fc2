@@ -8,6 +8,13 @@ BASE_FORECAST_OUTPUT_DIR = '/home/ubuntu/Build_WRF/WRF-4.1.2/test/em_real/'
 S3_BUCKET_NAME = 'mcm-modeltest'
 DOMAINS = ['d01', 'd02']
 
+# ASSUMPTIONS:
+#   There are 4 model runs per day.
+#   The model run files will be outputed to their run folder.  For example the 6Z
+#   run would be in the model machine output folder....
+#   '/home/ubuntu/Build_WRF/WRF-4.1.2/test/em_real/0600/'
+#
+
 
 # helper constants, don't touch
 LOG_FILE = File.open(File.join(__dir__, "out.log"), "a")

@@ -2,7 +2,7 @@
 
 ---------------------------------------------------------------
 
-**This script is mean to be run on a regular basis via a cron
+**This script is meant to be run on a regular basis via a cron
  job and copy over the output files from the WRF model
  to an AWS S3 bucket.  It should
  be run on a separate instance than the model machine.
@@ -12,14 +12,14 @@
 ---------------------------------------------------------------
 
 
-FC2-MICRO:
+**FC2-MICRO:**
 This is the name for the EC2 mirco instance running this script.
 When creating an image for this machine, it's best to create a 
 medium one, other wise it might run out of memory or you might
 run out of patience.
 
 
-MODEL-M5:
+**MODEL-M5:**
 This is the name for the large instance running the models.
 
 ----------------------------------------------------------------------
@@ -40,7 +40,8 @@ Instructions for setting up the MODEL-M5 instance:
       ```bash
       aws configure
      ```
-    then get give it the information it asks for.
+    then get give it the information it asks for.  Make sure to give it
+the proper region.
 
 
 
@@ -65,7 +66,8 @@ Instructions for setting up the FC2-MICRO instance:
       ```bash
       aws configure
      ```
-    then get give it the information it asks for.
+    then get give it the information it asks for.  Make sure to give it
+the proper region.
 
   - run these commands
      ```bash
